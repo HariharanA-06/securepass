@@ -1,0 +1,1 @@
+# SecurePass - Real-Time Password Strength Analyzer

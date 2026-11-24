@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SecurePass | Password Strength Checker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="card">
+    <div class="brand">
+      <div class="logo">🛡️</div>
+      <div>
+        <h1>SecurePass</h1>
+        <p class="subtitle">Real-time password strength analyzer</p>
+      </div>
+    </div>
+
+    <div class="input-wrap">
+      <input type="password" id="pw" placeholder="Type a password..." autocomplete="off">
+      <button id="eye" type="button" aria-label="Show or hide password">👁</button>
+    </div>
+
+    <div class="meter" id="meter">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="level-row">
+      <span id="level" class="badge">Start typing</span>
+      <span id="score" class="score"></span>
+    </div>
+
+    <h3 class="section-title">Requirements</h3>
+    <ul id="rules" class="rules">
+      <li data-rule="len8">At least 8 characters</li>
+      <li data-rule="len12">12+ characters (recommended)</li>
+      <li data-rule="case">Uppercase and lowercase letters</li>
+      <li data-rule="num">At least one number</li>
+      <li data-rule="sym">At least one symbol (! @ # $)</li>
+    </ul>
+
+    <div id="tipsBox" class="tips-box hidden">
+      <h3 class="section-title">How to improve</h3>
+      <ul id="tips"></ul>
+    </div>
+
+    <p class="footer">🔒 Your password is only checked locally and never stored.</p>
+  </main>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
